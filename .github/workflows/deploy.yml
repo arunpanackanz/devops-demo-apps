@@ -20,4 +20,6 @@ jobs:
             cd ~/devops-demo-apps
             git pull
             pkill -f app.py || true
-            screen -dmS flaskapp sudo venv/bin/python app.py
+            screen -S flaskapp -X quit || true
+            screen -dmS flaskapp bash -c "cd ~/devops-demo-apps && source venv/bin/activate && python app.py"
+
