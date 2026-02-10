@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd ~/devops-demo-app
+            cd ~/devops-demo-apps
             git pull
             pkill -f app.py || true
             screen -dmS flaskapp sudo venv/bin/python app.py
